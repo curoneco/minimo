@@ -1,0 +1,43 @@
+module.exports = function(grunt){
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    jade:{
+      compile:{
+        option:{
+          client:false,
+          pretty:true
+        },
+        files:[{
+            cwd:"source/views/",
+            src:"*.jade",
+            dest:"public/",
+            expand: true,
+            ext:".html"
+        }]
+      }
+    },
+    sass:{
+      option:{
+        compress:true,
+        sourceMap:true,
+        style:'expanded'
+      },
+      dist:{
+        files:{
+          "public/css/main.css":"source/sass/main.scss"
+        }
+      }
+    },
+    watch:{
+      css:{
+        files:["Gruntfile.js","**/*.scss","source/views/*.jade"],
+        tasks:['jade','sass']
+      }
+    }
+  });
+  grunt.loadNpmTasks("grunt-contrib-jade");
+  grunt.loadNpmTasks("grunt-contrib-sass");
+  grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.registerTask("build",["jade","sass","watch"]);
+  grunt.registerTask("default",["build"]);
+};
