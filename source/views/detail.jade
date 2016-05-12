@@ -1,0 +1,101 @@
+doctype html
+html(lang="en")
+	head
+		link(href="css/main.css", rel="stylesheet")
+		title Minimo project
+	body
+		include include/header.jade
+		section
+			div.content.container
+				div.slider
+					a(href="#", title="Slider")
+						img(src="images/large-slide.jpg", alt="")
+				div.detail-ct
+					.left-col
+						.header photodiary
+						h1 The perfect weekend getaway
+						.left-content
+							p
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+							p
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							p
+								“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.” 
+							p
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+							p
+								img(src="images/detail-1.jpg", atl="")
+							p
+								img(src="images/detail-2.jpg", atl="")
+							p
+								img(src="images/detail-3.jpg", atl="")
+							p
+								i
+									“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.” 
+							p
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+						.like-share
+							ul
+								each val in ['share', '<a href="#" title=""><img src="images/share-fb.png" alt="" /></a>','<a href="#" title=""><img src="images/share-gp.png" alt="" /></a>','<a href="#" title=""><img src="images/share-tum.png" alt="" /></a>','<a href="#" title=""><img src="images/share-tw.png" alt="" /></a>','<a href="#" title=""><img src="images/pint.png" alt="" /></a>']
+									li!= val
+					.right-col
+						.about-block
+							img(src="images/right-about.jpg", atl="")
+							h2 About me
+							.about-description.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+							.like-share
+								ul
+									for shareItem in ['<a href="#" title=""><img src="images/share-fb.png" alt=""/></a>','<a href="#" title=""><img src="images/share-gp.png" alt=""/></a>','<a href="#" title=""><img src="images/pint.png" alt="" /></a>']
+										li!= shareItem
+							.clearFix
+						.top-post-block
+							h2 Top posts
+							mixin topPost(titleTP,cmmTP)
+								.top-post-item
+									.title-toppost: a(href="#", title= titleTP)= titleTP
+									.comment-toppost= cmmTP
+
+							+topPost("A day exploring the Alps", "25 comments")
+							+topPost("American dream", "19 comments")
+							+topPost("Cold winter days", "15 comments")
+							+topPost("A day exploring the Alps", "25 comments")
+						.banner-block
+							a(href="#", title=""): img(src="images/banner-right.jpg", alt="")
+				.clearFix
+			.mid-content.newsletter-block
+				.container
+					h3.header you may also like
+					mixin midCT(titleMid, imgMid)
+						.mid-content-item
+							.mid-ct-img: a(href="#", title=titleMid): img(src=imgMid, alt=titleMid)
+							.mid-ct-title: a(href="#", title=titleMid)= titleMid
+					+midCT("Cold winter days","images/similar1.jpg")
+					+midCT("A day exploring the Alps","images/similar2.jpg")
+					+midCT("American Dream","images/similar3.jpg")
+					.clearFix
+
+			.content.container
+				.comments
+					h3.header 2 comments
+					mixin cmDetail(avatar, username,comment)
+						.comment-item
+								.right-cm: a(href="#", title= username): img(src=avatar, alt= username)
+								.left-cm
+									.user-name: a(href="#", title= username)= username
+									.comment-ct= comment
+									a.reply-cm(href="#") Reply
+								.clearFix
+
+					+cmDetail("images/profile_picture.jpg","John Doe","Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo!")
+					+cmDetail("images/profile.jpg","Hieu Huynh","Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.")
+					.new-comment.comment-item
+						.right-cm: a(href="#", title=""): img(src="images/profile.jpg", alt="")
+						.left-cm: input(type="text", placeholder="Join the discussion")
+						.clearFix
+					.user-connect.comment-item
+						ul
+							each connect in ["Connected with", "<a href='#'><img src='images/share-tw.png' alt='' /></a>","<a href='#'><img src='images/share-fb.png' alt='' /></a>"]
+								li!= connect
+		include include/footer.jade
+		
